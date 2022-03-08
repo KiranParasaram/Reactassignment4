@@ -1,70 +1,69 @@
 
-import * as React from 'react';
-import Table from '@mui/material/Table';
-import TableBody from '@mui/material/TableBody';
-import TableCell from '@mui/material/TableCell';
-import TableContainer from '@mui/material/TableContainer';
-import TableHead from '@mui/material/TableHead';
-import TableRow from '@mui/material/TableRow';
-import Paper from '@mui/material/Paper';
-import { NavLink } from 'react-router-dom';
+import React, { useState  } from 'react'
+import { Link, NavLink } from 'react-router-dom'
+
+import { makeStyles } from '@material-ui/core/styles';
+import Table from '@material-ui/core/Table';
+import TableBody from '@material-ui/core/TableBody';
+import TableCell from '@material-ui/core/TableCell';
+import TableContainer from '@material-ui/core/TableContainer';
+import TableHead from '@material-ui/core/TableHead';
+import TableRow from '@material-ui/core/TableRow';
+import Paper from '@material-ui/core/Paper';
+
+import './style.css'
 
 
-const Students = () => {
+const Student = () => {
 
-    function createData(name, age, course, batch, change) {
-        return { name, age, course, batch, change };
-      }
+    const [data,useData] =useState([
+        {name:'Jhon' ,age:24,course:'MERN',batch:'October',edit: <a href='/#'>Edit</a>},
+        {name:'Doe' ,age:25,course:'MERN',batch:'November',edit: <a href='/#'>Edit</a>},
+        {name:'Biden' ,age:24,course:'MERN',batch:'October',edit: <a href='/#'>Edit</a>},
+        {name:'Barar' ,age:24,course:'MERN',batch:'September',edit: <a href='/#'>Edit</a>},
+        {name:'Christ' ,age:24,course:'MERN',batch:'October',edit: <a href='/#'>Edit</a>},
+        {name:'Elent' ,age:24,course:'MERN',batch:'November',edit: <a href='/#'>Edit</a>},
+        {name:'Harshita Sharma' ,age:24,course:'MERN',batch:'November',edit: <a href='/#'>Edit</a>}
+    ])
     
-    const rows = [
-      createData('John',26, 'MERN', 'October',<NavLink to='#'>Edit</NavLink>),
-      createData('Doe', 23, 'MERN', 'November', <NavLink to='#'>Edit</NavLink>),
-      createData('Biden', 26, 'MERN', 'October', <NavLink to='#'>Edit</NavLink>),
-      createData('Barar', 30, 'MERN', 'November', <NavLink to='#'>Edit</NavLink>),
-      createData('Christ', 36, 'MERN', 'October', <NavLink to='#'>Edit</NavLink>),
-      createData('Elent', 36, 'MERN', 'November', <NavLink to='#'>Edit</NavLink>),
-      createData('Harshita', 25, 'MERN', 'June', <NavLink to='#'>Edit</NavLink>),
-    ];
 
-    return (
-        <div>
-            <div className='row1'>
-                <h1>Students Details</h1>
-                <button className='addStudent'>Add new student</button>
-            </div>
-            <div className='tableAlign'>
-              <TableContainer component={Paper} >
-                <Table sx={{ minWidth: 550 }} aria-label="simple table" >
-                  <TableHead>
-                    <TableRow>
-                      <TableCell><b>Name</b></TableCell>
-                      <TableCell align="right"><b>Age</b></TableCell>
-                      <TableCell align="right"><b>Course</b></TableCell>
-                      <TableCell align="right"><b>Batch</b></TableCell>
-                      <TableCell align="right"><b>Change</b></TableCell>
-                    </TableRow>
-                  </TableHead>
-                  <TableBody>
-                    {rows.map((row) => (
-                      <TableRow
-                        key={row.name}
-                        sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
-                      >
-                        <TableCell component="th" scope="row">
-                          {row.name}
-                        </TableCell>
-                        <TableCell align="right">{row.age}</TableCell>
-                        <TableCell align="right">{row.course}</TableCell>
-                        <TableCell align="right">{row.batch}</TableCell>
-                        <TableCell align="right">{row.change}</TableCell>
-                      </TableRow>
-                    ))}
-                  </TableBody>
-                </Table>
-              </TableContainer>
-              </div>
-          </div> 
-      );
-    }
+  return (
+    <div className='tableContainer'>
 
-export default Students
+      <div>
+        <h1>Student details</h1>
+        <button>Add new student</button>
+      </div>
+
+   
+<TableContainer component={Paper}>
+      <Table  size="large" aria-label="a dense table">
+        <TableHead>
+          <TableRow>
+            <TableCell>Name</TableCell>
+            <TableCell align="right">Age</TableCell>
+            <TableCell align="right">course&nbsp;</TableCell>
+            <TableCell align="right">Batch&nbsp;</TableCell>
+            <TableCell align="right">Change&nbsp;</TableCell>
+          </TableRow>
+        </TableHead>
+        <TableBody>
+          {data.map((row,index) => (
+            <TableRow key={index}>
+              <TableCell component="th" scope="row"> {row.name} </TableCell>
+              <TableCell align="right">{row.age}</TableCell>
+              <TableCell align="right">{row.course}</TableCell>
+              <TableCell align="right">{row.batch}</TableCell>
+              <TableCell align="right">{row.edit}</TableCell>
+             
+            </TableRow>
+          ))}
+        </TableBody>
+      </Table>
+    </TableContainer>
+
+    </div>
+  )
+}
+
+export default Student

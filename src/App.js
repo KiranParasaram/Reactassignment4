@@ -6,6 +6,7 @@ import { BrowserRouter as Router,Routes,Route,Navigate,Link} from 'react-router-
 import Student from "./Student";
 
 import './style.css'
+import PageNotFound from "./PageNotFound";
 
 
 class App extends Component{
@@ -20,6 +21,7 @@ class App extends Component{
                        <Route path='/' element={<Home/>}/>
                        <Route path='/student' element={<Student/>}/>
                        <Route path='/contact' element={<Contact/>}/>
+                       <Route path='/*' element={<PageNotFound/>}/>
 
                    </Routes>
                </Router>
