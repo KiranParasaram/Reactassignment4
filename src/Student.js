@@ -16,7 +16,7 @@ import './style.css'
 
 const Student = () => {
 
-    const [data,setData] =useState([
+    const [data] =useState([
         {name:'Jhon' ,age:24,course:'MERN',batch:'October',edit: <a href='/#'>Edit</a>},
         {name:'Doe' ,age:25,course:'MERN',batch:'November',edit: <a href='/#'>Edit</a>},
         {name:'Biden' ,age:24,course:'MERN',batch:'October',edit: <a href='/#'>Edit</a>},
