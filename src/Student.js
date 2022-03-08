@@ -1,8 +1,8 @@
 
 import React, { useState  } from 'react'
-import { Link, NavLink } from 'react-router-dom'
+// import { Link, NavLink } from 'react-router-dom'
 
-import { makeStyles } from '@material-ui/core/styles';
+// import { makeStyles } from '@material-ui/core/styles';
 import Table from '@material-ui/core/Table';
 import TableBody from '@material-ui/core/TableBody';
 import TableCell from '@material-ui/core/TableCell';
@@ -16,7 +16,7 @@ import './style.css'
 
 const Student = () => {
 
-    const [data,useData] =useState([
+    const [data,setData] =useState([
         {name:'Jhon' ,age:24,course:'MERN',batch:'October',edit: <a href='/#'>Edit</a>},
         {name:'Doe' ,age:25,course:'MERN',batch:'November',edit: <a href='/#'>Edit</a>},
         {name:'Biden' ,age:24,course:'MERN',batch:'October',edit: <a href='/#'>Edit</a>},
