@@ -1,6 +1,6 @@
 
 import React, { useState  } from 'react'
-// import { Link, NavLink } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
 // import { makeStyles } from '@material-ui/core/styles';
 import Table from '@material-ui/core/Table';
@@ -17,13 +17,13 @@ import './style.css'
 const Student = () => {
 
     const [data] =useState([
-        {name:'Jhon' ,age:24,course:'MERN',batch:'October',edit: <a href='#'>Edit</a>},
-        {name:'Doe' ,age:25,course:'MERN',batch:'November',edit: <a href='#'>Edit</a>},
-        {name:'Biden' ,age:24,course:'MERN',batch:'October',edit: <a href='#'>Edit</a>},
-        {name:'Barar' ,age:24,course:'MERN',batch:'September',edit: <a href='#'>Edit</a>},
-        {name:'Christ' ,age:24,course:'MERN',batch:'October',edit: <a href='#'>Edit</a>},
-        {name:'Elent' ,age:24,course:'MERN',batch:'November',edit: <a href='#'>Edit</a>},
-        {name:'Harshita Sharma' ,age:24,course:'MERN',batch:'November',edit: <a href='#'>Edit</a>}
+        {name:'Jhon' ,age:24,course:'MERN',batch:'October',edit: <Link to='#'>Edit</Link>},
+        {name:'Doe' ,age:25,course:'MERN',batch:'November',edit: <Link to='#'>Edit</Link>},
+        {name:'Biden' ,age:24,course:'MERN',batch:'October',edit: <Link to='#'>Edit</Link>},
+        {name:'Barar' ,age:24,course:'MERN',batch:'September',edit: <Link to='#'>Edit</Link>},
+        {name:'Christ' ,age:24,course:'MERN',batch:'October',edit: <Link to='#'>Edit</Link>},
+        {name:'Elent' ,age:24,course:'MERN',batch:'November',edit: <Link to='#'>Edit</Link>},
+        {name:'Harshita Sharma' ,age:24,course:'MERN',batch:'November',edit: <Link to='#'>Edit</Link>}
     ])
     
 
